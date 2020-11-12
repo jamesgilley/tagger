@@ -13,6 +13,25 @@ let baseUrl = 'https://image.tmdb.org/t/p/original';
 //modified api call with key:
 //https://api.themoviedb.org/3/discover/movie?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1
 
+//add variables here
+
+
+
+//add fetch request
+
+
+fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US`)
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+    for(i=0; i < data.genres.length; i++){
+        console.log(data.genres[i].name)
+    }
+})
+
+
+//create function for this fetch and add variables to url
+
 fetch(`https://api.themoviedb.org/3/discover/movie?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
         .then(response => response.json())
         .then(data => {
