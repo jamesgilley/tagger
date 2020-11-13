@@ -14,18 +14,39 @@ let baseUrl = 'https://image.tmdb.org/t/p/original';
 //https://api.themoviedb.org/3/discover/movie?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1
 
 //add variables here
-
+ var data = 
 
 
 //add fetch request
+//https://api.themoviedb.org/3/genre/movie/list?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US
+
+fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US`)
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+    console.log("genre", data.genres[0].name)
+    for(i=0; i < data.genres.length; i++){
+        console.log(data.genres[i].name)
+
+        var name = data.genres[i].name
+
+
+    }
+})
+
 
 
 fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=0538a44ea7ab03c73ebbfcd9542b4ac3&language=en-US`)
 .then(response => response.json())
 .then(data => {
     console.log(data)
+    console.log("genre", data.genres[0].name)
     for(i=0; i < data.genres.length; i++){
         console.log(data.genres[i].name)
+
+        var name = data.genres[i].name
+
+
     }
 })
 
